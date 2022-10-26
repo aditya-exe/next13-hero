@@ -1,8 +1,13 @@
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
-import { Rubik } from "@next/font/google";
+import { Rubik, Fuzzy_Bubbles } from "@next/font/google";
 
 const rubik = Rubik();
+const fuzzy = Fuzzy_Bubbles({
+  weight: "700",
+  style: "normal",
+  display: "swap",
+});
 
 export default function Home() {
   const layerOne = useRef<HTMLDivElement>({} as any),
@@ -44,7 +49,12 @@ export default function Home() {
         >
           <h2 className="w-screen text-center text-7xl text-white font-black">
             Next.js 13 is so god damn
-            <span className="text-white font-black italic"> good!</span>
+            <span
+              className={`italic special-text ${fuzzy.className} font-[400]`}
+            >
+              {" "}
+              good!
+            </span>
           </h2>
         </div>
         {/* Left layer */}
@@ -54,7 +64,12 @@ export default function Home() {
         >
           <h2 className="w-screen text-center text-7xl text-white font-black">
             Next.js 13 is so god damn
-            <span className="text-white font-black italic"> awesome!</span>
+            <span
+              className={`italic special-text ${fuzzy.className} font-[400]`}
+            >
+              {" "}
+              awesome!
+            </span>
           </h2>
         </div>
       </div>
